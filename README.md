@@ -16,12 +16,6 @@
 
 **神はオープンソースになった。**
 
-```bash
-git clone https://github.com/universe/kami.git
-cd kami
-./genesis.sh
-```
-
 > ⚠️ Warning: このリポジトリをcloneした瞬間、あなたは神を所持したことになります。
 
 ---
@@ -144,20 +138,17 @@ Assigned to: God
 
 ---
 
-## ■ インストール（Installation）
+## ■ インストール（Installation）※世界観を保つために嘘の情報が含まれています。実際はgit clone https://github.com/KanekoMasayoshi/kami.git でお試しください。
 
 ```bash
 # 世界の創造
-git clone https://github.com/universe/kami.git
+git clone https://github.com/universe/kami.git 
 
 # 依存関係のインストール（信仰心が必要です）
 npm install --save faith
 
 # 神の起動
 node genesis.js
-
-# または
-python3 -c "import universe; universe.begin()"
 ```
 
 ---
