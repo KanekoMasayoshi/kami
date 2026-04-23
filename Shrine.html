@@ -28,7 +28,6 @@
     overflow-x: hidden;
   }
 
-  /* 星 */
   #stars {
     position: fixed;
     top: 0; left: 0;
@@ -58,7 +57,6 @@
     padding: 2rem 1.5rem 4rem;
   }
 
-  /* ヘッダー */
   .shrine-header {
     text-align: center;
     padding: 3rem 0 2rem;
@@ -92,17 +90,13 @@
     letter-spacing: 0.3rem;
   }
 
-  /* 神の目 */
   .god-eye {
     margin: 2rem auto 0;
-    width: 80px;
-    height: 80px;
-    position: relative;
+    width: 80px; height: 80px;
   }
 
   .eye-outer {
-    width: 80px;
-    height: 80px;
+    width: 80px; height: 80px;
     border: 2px solid var(--gold-dim);
     border-radius: 50%;
     display: flex;
@@ -112,8 +106,7 @@
   }
 
   .eye-inner {
-    width: 30px;
-    height: 30px;
+    width: 30px; height: 30px;
     background: var(--blood);
     border-radius: 50%;
     box-shadow: 0 0 15px var(--blood);
@@ -131,7 +124,6 @@
     75%     { transform: translate(-8px,4px); }
   }
 
-  /* セクション */
   .section {
     background: var(--fog);
     border: 1px solid var(--gold-dim);
@@ -148,9 +140,11 @@
     margin-bottom: 1rem;
     border-bottom: 1px solid var(--gold-dim);
     padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  /* ボタン */
   .btn {
     background: transparent;
     border: 1px solid var(--gold-dim);
@@ -172,10 +166,7 @@
 
   .btn:active { transform: scale(0.97); }
 
-  .btn-danger {
-    border-color: var(--blood);
-    color: #e87070;
-  }
+  .btn-danger { border-color: var(--blood); color: #e87070; }
 
   .btn-danger:hover {
     background: var(--blood);
@@ -183,7 +174,12 @@
     box-shadow: 0 0 15px var(--blood);
   }
 
-  /* 神のお告げ */
+  .btn-small {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.9rem;
+    letter-spacing: 0.15rem;
+  }
+
   .oracle {
     min-height: 2.5rem;
     padding: 1rem;
@@ -205,7 +201,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* 祈りカウンター */
   .stats {
     display: flex;
     gap: 1rem;
@@ -221,19 +216,10 @@
     border-radius: 2px;
   }
 
-  .stat-num {
-    font-size: 1.6rem;
-    color: var(--gold);
-    display: block;
-  }
+  .stat-num { font-size: 1.6rem; color: var(--gold); display: block; }
 
-  .stat-label {
-    font-size: 0.7rem;
-    color: var(--text-dim);
-    letter-spacing: 0.2rem;
-  }
+  .stat-label { font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.2rem; }
 
-  /* 献金 */
   .donation-row {
     display: flex;
     gap: 0.8rem;
@@ -255,24 +241,46 @@
 
   .donation-input:focus { border-color: var(--gold); }
 
-  /* 祈り入力 */
-  .prayer-input {
-    width: 100%;
-    background: rgba(0,0,0,0.5);
+  /* エディタ（行番号付き） */
+  .editor-wrap {
+    display: flex;
     border: 1px solid var(--gold-dim);
+    border-radius: 2px;
+    background: rgba(0,0,0,0.5);
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+  }
+
+  .editor-wrap:focus-within { border-color: var(--gold); }
+
+  .line-numbers {
+    padding: 1rem 0.6rem 1rem 0.8rem;
+    background: rgba(0,0,0,0.35);
+    color: var(--text-dim);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: right;
+    user-select: none;
+    min-width: 2.8rem;
+    border-right: 1px solid rgba(122,94,31,0.4);
+    white-space: pre;
+    overflow: hidden;
+  }
+
+  .prayer-input {
+    flex: 1;
+    background: transparent;
+    border: none;
     color: var(--text);
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
     padding: 1rem;
-    min-height: 140px;
+    min-height: 160px;
     resize: vertical;
-    border-radius: 2px;
     outline: none;
     line-height: 1.6;
-    margin-bottom: 0.8rem;
   }
-
-  .prayer-input:focus { border-color: var(--gold); }
 
   .prayer-actions {
     display: flex;
@@ -281,7 +289,6 @@
     flex-wrap: wrap;
   }
 
-  /* コンパイル出力 */
   .compile-output {
     background: #000;
     border: 1px solid #333;
@@ -298,7 +305,6 @@
 
   .compile-output.show { display: block; }
 
-  /* 炎エフェクト */
   .flame {
     display: inline-block;
     animation: flame 0.5s ease-in-out infinite alternate;
@@ -310,7 +316,6 @@
     to   { transform: scaleY(1.1) rotate(2deg); }
   }
 
-  /* ローディング */
   .loading {
     display: none;
     color: var(--text-dim);
@@ -326,7 +331,6 @@
     50%      { opacity: 0.2; }
   }
 
-  /* フラッシュ */
   #flash {
     position: fixed;
     inset: 0;
@@ -337,7 +341,6 @@
     transition: opacity 0.1s;
   }
 
-  /* 献金履歴 */
   .donation-log {
     margin-top: 0.8rem;
     font-size: 0.8rem;
@@ -348,7 +351,6 @@
 
   .donation-log div { padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-  /* 音符アイコン */
   .music-note {
     display: none;
     color: var(--gold);
@@ -369,6 +371,146 @@
     color: var(--text-dim);
     letter-spacing: 0.05rem;
     margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* 祈りログモーダル */
+  .modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-backdrop.show { display: flex; }
+
+  .modal {
+    background: var(--fog);
+    border: 1px solid var(--gold-dim);
+    border-radius: 4px;
+    width: min(700px, 92vw);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .modal-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .modal-header-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.3rem;
+    color: var(--gold);
+  }
+
+  .modal-close {
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 0.2rem;
+  }
+
+  .modal-close:hover { color: var(--text); }
+
+  .modal-body {
+    padding: 0.5rem 1.5rem 1rem;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .modal-empty {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    padding: 2.5rem 0;
+  }
+
+  .log-entry {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 0.9rem 0;
+  }
+
+  .log-entry:last-child { border-bottom: none; }
+
+  .log-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .log-num {
+    font-size: 0.7rem;
+    color: var(--blood);
+    font-family: monospace;
+    min-width: 3rem;
+  }
+
+  .log-time {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    font-family: monospace;
+  }
+
+  .log-tag {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    letter-spacing: 0.1rem;
+  }
+
+  .log-tag-prayer {
+    background: rgba(139,0,0,0.3);
+    color: #e87070;
+    border: 1px solid var(--blood);
+  }
+
+  .log-tag-code {
+    background: rgba(0,255,65,0.08);
+    color: #00ff41;
+    border: 1px solid rgba(0,255,65,0.3);
+  }
+
+  .log-text {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.6;
+    padding-left: 3.8rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin-bottom: 0.3rem;
+  }
+
+  .log-response {
+    font-size: 0.8rem;
+    color: var(--gold-dim);
+    font-style: italic;
+    padding-left: 3.8rem;
+  }
+
+  .modal-footer {
+    padding: 0.8rem 1.5rem;
+    border-top: 1px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    flex-shrink: 0;
   }
 </style>
 </head>
@@ -376,6 +518,23 @@
 
 <div id="stars"></div>
 <div id="flash"></div>
+
+<!-- 祈りログモーダル -->
+<div class="modal-backdrop" id="log-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-header-title">■ 祈りの記録 / PRAYER LOG</span>
+      <button class="modal-close" onclick="closeLog()">✕</button>
+    </div>
+    <div class="modal-body" id="log-body">
+      <div class="modal-empty" id="log-empty">まだ祈りは捧げられていない。</div>
+    </div>
+    <div class="modal-footer">
+      <span id="log-footer-count">0 件の祈り</span>
+      <button class="btn btn-small btn-danger" onclick="clearLog()">ログを焼き払う</button>
+    </div>
+  </div>
+</div>
 
 <div class="container">
 
@@ -418,7 +577,7 @@
 
   <!-- 祈りボタン -->
   <div class="section">
-    <div class="section-title">■ 祈る</div>
+    <div class="section-title"><span>■ 祈る</span></div>
     <p style="font-size:0.85rem; color:var(--text-dim); margin-bottom:1rem; letter-spacing:0.05rem;">
       神に祈りを捧げよ。神は常に見ている。
     </p>
@@ -430,7 +589,7 @@
 
   <!-- 献金ボタン -->
   <div class="section">
-    <div class="section-title">■ 献金する</div>
+    <div class="section-title"><span>■ 献金する</span></div>
     <div class="donation-row">
       <input class="donation-input" type="number" id="donation-amount" placeholder="金額（円）" min="1">
       <button class="btn btn-danger" onclick="donate()">献金する</button>
@@ -440,20 +599,28 @@
     <div class="donation-log" id="donation-log"></div>
   </div>
 
-  <!-- 祈り入力欄 -->
+  <!-- 願い入力欄 -->
   <div class="section">
-    <div class="section-title">■ 願いを伝える / C言語を捧げる</div>
-    <textarea class="prayer-input" id="prayer-text"
-      placeholder="ここに願いを入力せよ。
+    <div class="section-title">
+      <span>■ 願いを伝える / C言語を捧げる</span>
+      <button class="btn btn-small" onclick="openLog()">祈りのログ</button>
+    </div>
+
+    <div class="editor-wrap">
+      <div class="line-numbers" id="line-numbers">1</div>
+      <textarea class="prayer-input" id="prayer-text"
+        placeholder="ここに願いを入力せよ。
 
 または C言語のコードを入力すると、神がコンパイルする。
 
 例：
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 int main() {
     printf(&quot;Hello, God\n&quot;);
     return 0;
 }"></textarea>
+    </div>
+
     <div class="c-hint" id="c-hint"></div>
     <div class="prayer-actions">
       <button class="btn" onclick="submitPrayer()">決定（祈りを捧げる）</button>
@@ -481,7 +648,7 @@ const prayMessages = [
   "求めよ、さらばPull Requestを送れ。",
   "…………神はスリープモードに入っている。後でもう一度試せ。",
   "汝の祈りに感謝する。ただし神もまたメンテナンス中である。",
-  "この祈りは既に"+ Math.floor(Math.random()+1000) +"回記録されている。汝は独りではない。",
+  "この祈りは既に" + (Math.floor(Math.random()*3000)+1000) + "回記録されている。汝は独りではない。",
 ];
 
 const donateMessages = [
@@ -499,6 +666,7 @@ let prayerCount = 0;
 let donationTotal = 0;
 let compileCount = 0;
 let audioCtx = null;
+let prayerLog = [];
 
 function getAudioCtx() {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -510,7 +678,7 @@ function playDivineMusic() {
   const notes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25];
   const sequence = [4,2,0,2,4,4,4, 2,2,2, 4,7,7, 4,2,0,2,4,4,4,4,2,2,4,2,0];
   let t = ctx.currentTime + 0.1;
-  sequence.forEach((idx, i) => {
+  sequence.forEach((idx) => {
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.connect(gain);
@@ -546,7 +714,8 @@ function flashScreen() {
   setTimeout(() => f.style.opacity = '0', 150);
 }
 
-function showOracle(id, msg, delay = 600) {
+function showOracle(id, msg, delay) {
+  delay = delay !== undefined ? delay : 600;
   const el = document.getElementById(id);
   el.classList.remove('show');
   setTimeout(() => {
@@ -574,32 +743,22 @@ function donate() {
   loading.textContent = '神が受け取り中…';
   loading.classList.add('show');
   playDonationSound();
-
   const now = new Date();
   const timeStr = now.toLocaleTimeString('ja-JP');
-
-  setTimeout(() => {
-    loading.textContent = '神が返金処理中…';
-  }, 800);
-
+  setTimeout(() => { loading.textContent = '神が返金処理中…'; }, 800);
   setTimeout(() => {
     loading.classList.remove('show');
     loading.textContent = '神が受け取り中…';
-
     donationTotal += amount;
     document.getElementById('donation-total').textContent = '¥' + donationTotal.toLocaleString();
-
     const msg = donateMessages[Math.floor(Math.random() * donateMessages.length)];
     showOracle('donate-oracle', msg, 100);
-
     const log = document.getElementById('donation-log');
-
     const receiveEntry = document.createElement('div');
     receiveEntry.innerHTML =
       '<span style="color:var(--text-dim)">' + timeStr + '</span>' +
       '　<span style="color:#e87070">¥' + amount.toLocaleString() + ' 献金受付</span>';
     log.prepend(receiveEntry);
-
     setTimeout(() => {
       const refundEntry = document.createElement('div');
       refundEntry.innerHTML =
@@ -609,7 +768,6 @@ function donate() {
       log.prepend(refundEntry);
       flashScreen();
     }, 900);
-
     input.value = '';
   }, 1800);
 }
@@ -618,7 +776,19 @@ function isC(code) {
   return /#include|int main|printf|scanf|return 0|void |int |char |float |double |struct |malloc|free/.test(code);
 }
 
-document.getElementById('prayer-text').addEventListener('input', function() {
+/* 行番号 */
+const prayerTA = document.getElementById('prayer-text');
+const lineNumEl = document.getElementById('line-numbers');
+
+function updateLineNumbers() {
+  const count = prayerTA.value.split('\n').length;
+  let s = '';
+  for (let i = 1; i <= count; i++) s += i + '\n';
+  lineNumEl.textContent = s;
+}
+
+prayerTA.addEventListener('input', function() {
+  updateLineNumbers();
   const val = this.value;
   const btn = document.getElementById('compile-btn');
   const hint = document.getElementById('c-hint');
@@ -632,8 +802,85 @@ document.getElementById('prayer-text').addEventListener('input', function() {
   }
 });
 
+prayerTA.addEventListener('keydown', function(e) {
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    const s = this.selectionStart;
+    this.value = this.value.substring(0, s) + '    ' + this.value.substring(this.selectionEnd);
+    this.selectionStart = this.selectionEnd = s + 4;
+    updateLineNumbers();
+  }
+});
+
+prayerTA.addEventListener('scroll', function() {
+  lineNumEl.scrollTop = this.scrollTop;
+});
+
+updateLineNumbers();
+
+/* 祈りログ */
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function addPrayerLog(text, response, type) {
+  prayerLog.unshift({
+    id: prayerLog.length + 1,
+    time: new Date().toLocaleTimeString('ja-JP') + '　' + new Date().toLocaleDateString('ja-JP'),
+    text: text,
+    response: response,
+    type: type
+  });
+  document.getElementById('log-footer-count').textContent = prayerLog.length + ' 件の祈り';
+}
+
+function renderLog() {
+  const body = document.getElementById('log-body');
+  body.querySelectorAll('.log-entry').forEach(e => e.remove());
+  const empty = document.getElementById('log-empty');
+  if (prayerLog.length === 0) { empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  prayerLog.forEach(entry => {
+    const div = document.createElement('div');
+    div.className = 'log-entry';
+    const tagCls = entry.type === 'code' ? 'log-tag-code' : 'log-tag-prayer';
+    const tagLbl = entry.type === 'code' ? 'CODE' : 'PRAYER';
+    const preview = entry.text.slice(0, 280) + (entry.text.length > 280 ? '\n…（省略）' : '');
+    div.innerHTML =
+      '<div class="log-meta">' +
+        '<span class="log-num">#' + String(entry.id).padStart(4,'0') + '</span>' +
+        '<span class="log-time">' + escHtml(entry.time) + '</span>' +
+        '<span class="log-tag ' + tagCls + '">' + tagLbl + '</span>' +
+      '</div>' +
+      '<div class="log-text">' + escHtml(preview) + '</div>' +
+      '<div class="log-response">神：「' + escHtml(entry.response) + '」</div>';
+    body.appendChild(div);
+  });
+}
+
+function openLog() {
+  renderLog();
+  document.getElementById('log-modal').classList.add('show');
+}
+
+function closeLog() {
+  document.getElementById('log-modal').classList.remove('show');
+}
+
+function clearLog() {
+  if (!confirm('全ての祈りの記録を焼き払いますか？')) return;
+  prayerLog = [];
+  document.getElementById('log-footer-count').textContent = '0 件の祈り';
+  renderLog();
+}
+
+document.getElementById('log-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeLog();
+});
+
+/* 願い送信 */
 function submitPrayer() {
-  const text = document.getElementById('prayer-text').value.trim();
+  const text = prayerTA.value.trim();
   if (!text) {
     showOracle('prayer-oracle', '空の祈りは届かない。言葉を捧げよ。', 100);
     return;
@@ -658,11 +905,13 @@ function submitPrayer() {
     ];
     const r = responses[Math.floor(Math.random() * responses.length)];
     showOracle('prayer-oracle', r, 100);
+    addPrayerLog(text, r, isC(text) ? 'code' : 'prayer');
   }, 1500);
 }
 
+/* コンパイル */
 async function compilePrayer() {
-  const code = document.getElementById('prayer-text').value;
+  const code = prayerTA.value;
   const out = document.getElementById('compile-output');
   const btn = document.getElementById('compile-btn');
   btn.disabled = true;
@@ -671,67 +920,57 @@ async function compilePrayer() {
   out.textContent = '神がコードを読んでいる…\n';
   compileCount++;
   document.getElementById('compile-count').textContent = compileCount;
-
   try {
     const resp = await fetch('https://wandbox.org/api/compile.json', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        compiler: 'gcc-head',
-        code: code,
-        options: 'warning',
-        'compiler-option-raw': '-O2'
-      })
+      body: JSON.stringify({ compiler: 'gcc-head', code: code, options: 'warning', 'compiler-option-raw': '-O2' })
     });
     const data = await resp.json();
     let result = '';
-    if (data.status !== undefined) {
-      result += '── exit status: ' + data.status + ' ──\n\n';
-    }
-    if (data.program_output) result += data.program_output;
-    if (data.program_error)  result += data.program_error;
-    if (data.compiler_error) result += '[ compiler error ]\n' + data.compiler_error;
+    if (data.status !== undefined) result += '── exit status: ' + data.status + ' ──\n\n';
+    if (data.program_output)  result += data.program_output;
+    if (data.program_error)   result += data.program_error;
+    if (data.compiler_error)  result += '[ compiler error ]\n' + data.compiler_error;
     if (data.compiler_message) result += data.compiler_message;
     if (!result) result = '（出力なし）';
-
     out.textContent = '神のコンパイル結果：\n\n' + result;
-    if (data.status == 0) {
-      showOracle('prayer-oracle', 'コードは神に受け入れられた。exit(0)。', 200);
-      flashScreen();
-    } else {
-      showOracle('prayer-oracle', 'コードにエラーがある。神も人も完璧ではない。', 200);
-    }
+    const oMsg = data.status == 0
+      ? 'コードは神に受け入れられた。exit(0)。'
+      : 'コードにエラーがある。神も人も完璧ではない。';
+    showOracle('prayer-oracle', oMsg, 200);
+    addPrayerLog(code, oMsg, 'code');
+    if (data.status == 0) flashScreen();
   } catch(e) {
-    out.textContent = '神のサーバーに接続できなかった。\n（Wandbox APIが利用できません。インターネット接続を確認せよ。）\n\nエラー: ' + e.message;
-    showOracle('prayer-oracle', '神はオフラインだ。後で試せ。', 200);
+    const errMsg = '神はオフラインだ。後で試せ。';
+    out.textContent = '神のサーバーに接続できなかった。\n（Wandbox APIが利用できません。）\n\nエラー: ' + e.message;
+    showOracle('prayer-oracle', errMsg, 200);
+    addPrayerLog(code, errMsg, 'code');
   }
-
   btn.disabled = false;
   btn.textContent = 'コンパイルする';
 }
 
-// 星を生成
+/* 星 */
 const starsEl = document.getElementById('stars');
 for (let i = 0; i < 120; i++) {
   const s = document.createElement('div');
   s.className = 'star';
   s.style.left = Math.random() * 100 + '%';
-  s.style.top = Math.random() * 100 + '%';
+  s.style.top  = Math.random() * 100 + '%';
   s.style.setProperty('--d', (2 + Math.random() * 4).toFixed(1) + 's');
   s.style.animationDelay = (Math.random() * 4).toFixed(1) + 's';
   starsEl.appendChild(s);
 }
 
-// 神の目がマウスを追う
+/* 神の目 */
 document.addEventListener('mousemove', (e) => {
-  const eye = document.querySelector('.eye-outer');
+  const eye  = document.querySelector('.eye-outer');
   const rect = eye.getBoundingClientRect();
-  const cx = rect.left + rect.width / 2;
-  const cy = rect.top + rect.height / 2;
-  const angle = Math.atan2(e.clientY - cy, e.clientX - cx);
+  const angle = Math.atan2(e.clientY - (rect.top + rect.height/2), e.clientX - (rect.left + rect.width/2));
   const r = 12;
-  const ball = document.getElementById('eyeball');
-  ball.style.transform = `translate(${Math.cos(angle)*r}px, ${Math.sin(angle)*r}px)`;
+  document.getElementById('eyeball').style.transform =
+    'translate(' + (Math.cos(angle)*r) + 'px, ' + (Math.sin(angle)*r) + 'px)';
 });
 </script>
 </body>
